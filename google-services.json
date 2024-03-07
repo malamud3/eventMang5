@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "461098477274",
+    "firebase_url": "https://eventman-29ead-default-rtdb.firebaseio.com",
+    "project_id": "eventman-29ead",
+    "storage_bucket": "eventman-29ead.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461098477274:android:bf36e71cb351c1ae1267e3",
+        "android_client_info": {
+          "package_name": "com.example.eventMang4"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTwbM5xwKteOgSHLlBnCRLnf11d8KZzgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

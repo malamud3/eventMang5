@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDo_GBxPDpUH90MdQZmYyLOPj9ntXZVFSQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>461098477274</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.eventMang4</string>
+	<key>PROJECT_ID</key>
+	<string>eventman-29ead</string>
+	<key>STORAGE_BUCKET</key>
+	<string>eventman-29ead.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:461098477274:ios:6a58c9be16b409a11267e3</string>
+	<key>DATABASE_URL</key>
+	<string>https://eventman-29ead-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

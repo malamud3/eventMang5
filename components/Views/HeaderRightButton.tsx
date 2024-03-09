@@ -1,22 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import OptionsModal from "../Modal/OptionsModal/OptionsModal";
-import WebViewModal from "../WebViewModal";
+import OptionsModal from '../Modal/OptionsModal/OptionsModal';
+import WebViewModal from '../WebViewModal';
+import RateAppModal from "../Modal/RateAppModal/RateAppModal";
+import ShareAppModal from "../Modal/ShareAppModal/ShareAppModal";
 
-const HeaderRightButton: React.FC<{ navigation: any }> = ({ navigation }) => {
+interface Props {
+    navigation: any;
+}
+
+const HeaderRightButton: React.FC<Props> = ({ navigation }) => {
     const [isOptionsModalVisible, setOptionsModalVisible] = useState(false);
-    const [isPrivacyPolicyVisible, setPrivacyPolicyVisible] = useState(false);
+    const [isRateAppModalVisible, setRateAppModalVisible] = useState(false); // State for RateAppModal
+    const [isShareAppModalVisible, setShareAppModalVisible] = useState(false); // State for RateAppModal
 
-    const openOptionsModal = () => setOptionsModalVisible(true);
-    const closeOptionsModal = () => setOptionsModalVisible(false);
+    const [modalContent, setModalContent] = useState<{ isVisible: boolean; url: string } | null>(null);
 
-    const handlePrivacyPolicyPress = () => {
+    const openOptionsModal = useCallback(() => setOptionsModalVisible(true), []);
+    const closeOptionsModal = useCallback(() => setOptionsModalVisible(false), []);
+
+    const closeModal = useCallback(() => {
+        setModalContent(null)
+    }, [setModalContent]);
+
+    const openRateAppModal = useCallback(() => setRateAppModalVisible(true), []);
+    const closeRateAppModal = useCallback(() => setRateAppModalVisible(false), []);
+
+
+    const openShareAppModal = useCallback(() => setShareAppModalVisible(true), []);
+    const closeShareAppModal = useCallback(() => setShareAppModalVisible(false), []);
+
+    //Preventing unnecessary re-renders -> no changes -> useCallback
+    const handleModalOpen = useCallback((url: string) => {
         closeOptionsModal();
-        setPrivacyPolicyVisible(true);
-    };
+        setModalContent({ isVisible: true, url });
+    }, [closeOptionsModal, setModalContent]);
 
-    const closePrivacyPolicyModal = () => setPrivacyPolicyVisible(false);
+    const handleRateUs = useCallback(() => {
+        closeOptionsModal(); // Close options modal when Rate Us is clicked
+        openRateAppModal(); // Open Rate App modal
+    }, [closeOptionsModal, openRateAppModal]);
+
+    const handleShareUs = useCallback(() => {
+        closeOptionsModal(); // Close options modal when Rate Us is clicked
+        openShareAppModal(); // Open Rate App modal
+    }, [closeOptionsModal, openShareAppModal]);
 
     return (
         <>
@@ -29,13 +58,24 @@ const HeaderRightButton: React.FC<{ navigation: any }> = ({ navigation }) => {
                 visible={isOptionsModalVisible}
                 onRequestClose={closeOptionsModal}
             >
-                <OptionsModal closeModal={closeOptionsModal} onPrivacyPolicy={handlePrivacyPolicyPress} />
+                <OptionsModal
+                    closeModal={closeOptionsModal}
+                    onPrivacyPolicy={() => handleModalOpen('https://sites.google.com/view/gatherly/home')}
+                    onAbout={() => handleModalOpen('https://sites.google.com/view/about-gatherly/home')}
+                    onRateUs={handleRateUs}
+                    onShareUs={handleShareUs}
+                />
             </Modal>
-            <WebViewModal
-                isVisible={isPrivacyPolicyVisible}
-                onClose={closePrivacyPolicyModal}
-                url="https://sites.google.com/view/gatherly/home"
-            />
+            {modalContent && (
+                <WebViewModal
+                    key={modalContent.url}
+                    isVisible={modalContent.isVisible}
+                    onClose={closeModal}
+                    url={modalContent.url}
+                />
+            )}
+            <RateAppModal isVisible={isRateAppModalVisible} onClose={closeRateAppModal} />
+            <ShareAppModal isVisible={isShareAppModalVisible} onClose={closeShareAppModal} />
         </>
     );
 };

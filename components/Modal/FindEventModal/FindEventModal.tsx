@@ -6,6 +6,8 @@ import ModalClose from "../../Views/ModalClose";
 import ModalTitle from "../../Views/Text/ModalTitle";
 import EventInput from "../../Views/TextInput/EventInput";
 import FindButton from "../../Views/Buttons/FindButton";
+import { getAnalytics, logEvent } from 'firebase/analytics';
+import firebase from "firebase/compat";
 
 type FindEventModalProps = {
     isVisible: boolean;
@@ -17,9 +19,19 @@ type FindEventModalProps = {
 const FindEventModal: React.FC<FindEventModalProps> = ({ isVisible, onClose ,onEventFound, filteredData}) => {
     const [eventId, setEventId] = useState('');
 
+// Initialize analytics instance after Firebase app initialization
+    const analytics = getAnalytics();
+
     useEffect(() => {
         if (!isVisible) {
             setEventId('');
+        } else if (analytics) { // Check if analytics is initialized
+            // logEvent(analytics, 'event_found', {
+            //     found_event_id: eventId,
+            //     search_result: true,
+            // });
+        } else {
+            console.error('Firebase Analytics not initialized'); // Log error
         }
     }, [isVisible]);
 

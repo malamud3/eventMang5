@@ -19,21 +19,21 @@ type FindEventModalProps = {
 const FindEventModal: React.FC<FindEventModalProps> = ({ isVisible, onClose ,onEventFound, filteredData}) => {
     const [eventId, setEventId] = useState('');
 
-// Initialize analytics instance after Firebase app initialization
-    const analytics = getAnalytics();
-
-    useEffect(() => {
-        if (!isVisible) {
-            setEventId('');
-        } else if (analytics) { // Check if analytics is initialized
-            // logEvent(analytics, 'event_found', {
-            //     found_event_id: eventId,
-            //     search_result: true,
-            // });
-        } else {
-            console.error('Firebase Analytics not initialized'); // Log error
-        }
-    }, [isVisible]);
+// // Initialize analytics instance after Firebase app initialization
+//     const analytics = getAnalytics();
+//
+//     useEffect(() => {
+//         if (!isVisible) {
+//             setEventId('');
+//         } else if (analytics) { // Check if analytics is initialized
+//             // logEvent(analytics, 'event_found', {
+//             //     found_event_id: eventId,
+//             //     search_result: true,
+//             // });
+//         } else {
+//             console.error('Firebase Analytics not initialized'); // Log error
+//         }
+//     }, [isVisible]);
 
     const handleFindEvent = async () => {
 

@@ -26,10 +26,18 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.example.eventMang4"
-
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9458eaf4-d31b-407e-9990-0060711fc3cc"
+      },
+      "react-native-google-mobile-ads": {
+        "android_app_id": "ca-app-pub-9703499526212521~8556211433",
+        "ios_app_id": "ca-app-pub-9703499526212521~4866525662"
+      }
     }
   }
 }

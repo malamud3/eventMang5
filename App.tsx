@@ -6,7 +6,6 @@ import initializeApp = firebase.initializeApp;
 import 'react-native-gesture-handler'
 import { initializeAuth, getAuth, getReactNativePersistence } from 'firebase/auth';
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
-import {getAnalytics, logEvent} from "firebase/analytics";
 
 
 const firebaseConfig = {
@@ -25,8 +24,7 @@ const  auth = initializeAuth(app, {
     persistence: getReactNativePersistence(ReactNativeAsyncStorage)
 });
 
-const analytics = getAnalytics(app); // Pass the app instance
-
+// const analytics = getAnalytics(app); // Pass the app instance
 
 const App: React.FC = () => {
   return (

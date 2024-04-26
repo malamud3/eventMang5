@@ -11,7 +11,7 @@ Gatherly is a mobile application built with React Native and FireBase that aims 
 
 This project was undertaken as part of academic coursework to learn the skills needed for App Store Optimization (ASO). ASO is the process of improving the visibility of a mobile app in an app store, such as Google Play or the Apple App Store. This involves techniques to increase an app's ranking, downloads, and user engagement.
 
-For a more detailed explanation of this App Store Optimization (ASO) project and to view a live demo, please visit [this link](https://www.canva.com/design/DAF7t740f3k/DLkmjUmb0fVqkJ4WXrxzLw/edit?utm_content=DAF7t740f3k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+For a more detailed explanation of this App Store Optimization (ASO) project and to view a live demo, please visit [www.canva.com/DAF7t740f3k](https://www.canva.com/design/DAF7t740f3k/DLkmjUmb0fVqkJ4WXrxzLw/edit?utm_content=DAF7t740f3k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
 
 ## Features
 

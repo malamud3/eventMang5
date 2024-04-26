@@ -6,7 +6,7 @@
 # Gatherly - Event Planning App
 
 Gatherly is a mobile application built with React Native and FireBase that aims to simplify event planning, enabling users to effortlessly plan events, connect with friends, and manage RSVPs.
-![Alt text](/path/to/your/image.png "Optional title")
+![Alt text](./GoogleView.png)
 
 ## Features
 

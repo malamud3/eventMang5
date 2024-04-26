@@ -7,6 +7,11 @@
 
 Gatherly is a mobile application built with React Native and FireBase that aims to simplify event planning, enabling users to effortlessly plan events, connect with friends, and manage RSVPs.
 ![Alt text](./GoogleView.png)
+# Project Overview
+
+This project was undertaken as part of academic coursework to learn the skills needed for App Store Optimization (ASO). ASO is the process of improving the visibility of a mobile app in an app store, such as Google Play or the Apple App Store. This involves techniques to increase an app's ranking, downloads, and user engagement.
+
+To learn more about this academic work, [visit this link](https://www.canva.com/design/DAF7t740f3k/DLkmjUmb0fVqkJ4WXrxzLw/edit?utm_content=DAF7t740f3k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) or refer to the relevant course materials.
 
 ## Features
 
@@ -30,7 +35,6 @@ Contributions to Gatherly are welcome! If you have ideas for new features, find 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 Thank you for choosing Gatherly for your event planning needs! If you have any questions or need assistance, don't hesitate to reach out. Happy event planning! 🎉
-* 
